@@ -1,0 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Cube1 : MonoBehaviour, IPickable //this is a way to give the calss a contract 
+{
+    public void Interact()
+    {
+        Debug.Log("cube1");
+    }
+}
