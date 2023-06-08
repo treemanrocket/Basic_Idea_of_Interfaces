@@ -1,0 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public interface IPickable 
+{
+    void Interact(); 
+}
+//This interfaces calls this method to other classes that has: 1. The actual  IPickable behavior (the name of the interface) and 2. the method that needs to be public.
