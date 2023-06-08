@@ -1,0 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Cube2 : MonoBehaviour, IPickable
+{
+    public void Interact()
+    {
+        Debug.Log("cube2");
+    }
+}
