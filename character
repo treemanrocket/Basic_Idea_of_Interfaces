@@ -1,0 +1,46 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CharacterMovementScript : MonoBehaviour
+{
+    [Header("refrences")]
+    public float speed = 6f; 
+    public Rigidbody playerBody;
+    public Camera gameCamera;
+    
+
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+      if (other.gameObject.TryGetComponent(out IPickable PickObject))
+       {
+            PickObject.Interact();
+       }
+    }
+
+
+    void FixedUpdate()
+    {
+        float movementX = Input.GetAxisRaw("Horizontal");
+        float movementZ = Input.GetAxisRaw("Vertical");
+
+        Vector3 move = transform.right * movementX + transform.forward * movementZ;
+        move.Normalize();
+        //Vector3 move = new Vector3(movementX, 0, movementZ);
+
+        playerBody.velocity = (move * speed * Time.deltaTime * 100);
+        //controller.Move = (move * speed * Time.deltaTime);
+        //playerBody.AddForce(move * speed);
+    }
+}
